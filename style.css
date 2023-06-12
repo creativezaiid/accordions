@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: whitesmoke;
+  }
+  
+  .tab label {
+    color: white;
+    display: block;
+    padding: 15px 25px;
+    background-color: #191e24;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 2px 0;
+    position: relative;
+  }
+
+  .container {
+    max-width: 80%;
+    margin: 20px auto;
+  }
+  
+  .tab label::after {
+    top: 11px;
+    right: 25px;
+    font-size: large;
+    content: '+';
+    position: absolute;
+    font-weight: 400;
+    color: #fbfbf8;
+  }
+
+  .tab input:checked ~ label::after {
+    content: '-';
+    font-weight: 500;
+    font-size: xx-large;
+    top: 0;
+  }
+
+  .tab input {
+    display: none;
+  }
+  
+  .tab > .content {
+    background: rgb(248, 247, 247);
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    position: relative;
+    top: -10px;
+    z-index: -1;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid rgba(136, 133, 133, 0.204);
+  }
+  
+  .content p {
+    padding: 15px;
+  }
+  
+  .tab input:checked ~ .content {
+    max-height: 100vh;
+    box-shadow: 5px 5px 10px rgb(171, 164, 164);
+  }
+  
+  h2 {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  footer {
+    width: 100%;
+    text-align: center;
+    color: grey;
+    position: absolute;
+    bottom: 100px;
+    z-index: -10;
+  }
